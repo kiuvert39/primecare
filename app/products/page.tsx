@@ -50,7 +50,7 @@ export default function ProductsPage() {
           <button className="shrink-0 px-4 py-2 rounded-full bg-primary text-white text-xs font-semibold">
             All
           </button>
-          {home.categories.map((cat) => (
+          {home.categories.items.map((cat) => (
             <button key={cat.id}
               className="shrink-0 px-4 py-2 rounded-full bg-neutral-100 text-neutral-600
                          hover:bg-brand-100 hover:text-primary text-xs font-semibold

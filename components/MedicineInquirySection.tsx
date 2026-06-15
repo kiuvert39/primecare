@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { home } from "@/data";
 
-export function MedicineInquirySection() {
+export function  MedicineInquirySection() {
   const { inquiry } = home;
   const [value, setValue] = useState("");
 
@@ -36,12 +36,6 @@ export function MedicineInquirySection() {
       </svg>
 
       <div className="max-w-3xl mx-auto text-center relative z-10">
-
-        <span className="inline-flex items-center border border-white/20 text-white/70
-                         text-[11px] font-bold uppercase tracking-[0.18em]
-                         px-3.5 py-1.5 rounded-full mb-5">
-          {inquiry.eyebrow}
-        </span>
 
         <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white leading-tight mb-4">
           {inquiry.heading}

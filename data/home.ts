@@ -52,50 +52,68 @@ export const home = {
     image: "/images/bg-hero.jpeg",
   },
 
-  categories: [
-    {
-      id: "prescription",
-      label: "Prescription Medicines",
-      description: "Upload your Rx and get verified medicines delivered",
-      href: "/products?cat=prescription",
-      colorClass: "bg-brand-100 text-primary",
-    },
-    {
-      id: "otc",
-      label: "OTC & Generics",
-      description: "Quality over-the-counter medicines at great prices",
-      href: "/products?cat=otc",
-      colorClass: "bg-accent-100 text-accent-500",
-    },
-    {
-      id: "vitamins",
-      label: "Vitamins & Supplements",
-      description: "Premium supplements to support your wellbeing",
-      href: "/products?cat=vitamins",
-      colorClass: "bg-success/10 text-success",
-    },
-    {
-      id: "personal-care",
-      label: "Personal Care",
-      description: "Skincare, hygiene, and everyday wellness",
-      href: "/products?cat=personal-care",
-      colorClass: "bg-warning/10 text-warning",
-    },
-    {
-      id: "baby",
-      label: "Baby & Mother Care",
-      description: "Trusted products for every stage of motherhood",
-      href: "/products?cat=baby",
-      colorClass: "bg-accent-200/40 text-accent-500",
-    },
-    {
-      id: "devices",
-      label: "Medical Devices",
-      description: "Home monitoring and diagnostic equipment",
-      href: "/products?cat=devices",
-      colorClass: "bg-neutral-100 text-neutral-600",
-    },
-  ],
+  categories: {
+    eyebrow: "Browse by Category",
+    heading: "Everything You Need, All in One Place",
+    subheading:
+      "From prescription medicines to everyday health essentials — shop every category with confidence.",
+    items: [
+      {
+        id: "prescription",
+        label: "Prescription Medicines",
+        description: "Upload your Rx and get verified medicines delivered to your door.",
+        href: "/products?cat=prescription",
+        image: "/images/med1.jpeg",
+        gradient: "linear-gradient(145deg, rgba(30,31,69,0.78) 0%, rgba(40,42,95,0.72) 100%)",
+        iconColor: "text-primary",
+      },
+      {
+        id: "otc",
+        label: "OTC & Generics",
+        description: "Quality over-the-counter medicines at great prices, no prescription needed.",
+        href: "/products?cat=otc",
+        image: "/images/images (1).jpeg",
+        gradient: "linear-gradient(145deg, rgba(124,45,18,0.78) 0%, rgba(194,65,12,0.72) 100%)",
+        iconColor: "text-orange-600",
+      },
+      {
+        id: "vitamins",
+        label: "Vitamins & Supplements",
+        description: "Premium supplements to support your daily wellbeing and immune health.",
+        href: "/products?cat=vitamins",
+        image: "/images/download (1).jpeg",
+        gradient: "linear-gradient(145deg, rgba(20,83,45,0.78) 0%, rgba(22,101,52,0.72) 100%)",
+        iconColor: "text-green-700",
+      },
+      {
+        id: "personal-care",
+        label: "Personal Care",
+        description: "Skincare, hygiene, and everyday wellness essentials you can trust.",
+        href: "/products?cat=personal-care",
+        image: "/images/bg-hero.jpeg",
+        gradient: "linear-gradient(145deg, rgba(76,29,149,0.78) 0%, rgba(109,40,217,0.72) 100%)",
+        iconColor: "text-violet-700",
+      },
+      {
+        id: "baby",
+        label: "Baby & Mother Care",
+        description: "Trusted products for every stage of motherhood and early childhood.",
+        href: "/products?cat=baby",
+        image: "/images/images (1).jpeg",
+        gradient: "linear-gradient(145deg, rgba(131,24,67,0.78) 0%, rgba(190,24,93,0.72) 100%)",
+        iconColor: "text-pink-700",
+      },
+      {
+        id: "devices",
+        label: "Medical Devices",
+        description: "Home monitoring and diagnostic equipment for accurate health tracking.",
+        href: "/products?cat=devices",
+        image: "/images/med1.jpeg",
+        gradient: "linear-gradient(145deg, rgba(12,74,110,0.78) 0%, rgba(3,105,161,0.72) 100%)",
+        iconColor: "text-sky-700",
+      },
+    ],
+  },
 
   whyChooseUs: {
     eyebrow: "Why PrimeCare",
@@ -188,6 +206,55 @@ export const home = {
       { icon: "email",    label: "Email Us",        value: "hello@primecare.com" },
       { icon: "location", label: "Visit Us",        value: "123 Health Ave, Suite 100, New York, NY 10001" },
       { icon: "clock",    label: "Opening Hours",   value: "Mon–Sat 8 AM–9 PM · Sun 10 AM–6 PM" },
+    ],
+  },
+
+  faq: {
+    eyebrow: "FAQ",
+    heading: "Got Questions?\nWe Have\nAnswers.",
+    subheading:
+      "Everything you need to know about ordering, delivery, and our pharmacy services.",
+    contact: {
+      prompt: "Still have questions?",
+      cta:    "Chat with a pharmacist",
+      href:   "/contact",
+    },
+    items: [
+      {
+        question: "How do I submit a prescription?",
+        answer:
+          "Upload a clear photo or scan of your prescription during checkout. Our licensed pharmacists verify every prescription within 30 minutes before dispensing — no waiting around.",
+      },
+      {
+        question: "Do you offer same-day delivery?",
+        answer:
+          "Yes. Orders placed before 3 PM are delivered the same day within our delivery zones. You'll receive an SMS with real-time tracking once your order is dispatched by our rider.",
+      },
+      {
+        question: "Are your medicines authentic and safe?",
+        answer:
+          "Every medicine we stock is sourced directly from certified manufacturers and licensed wholesalers. We never carry grey-market or counterfeit products, and each batch is verified on arrival.",
+      },
+      {
+        question: "Can I set up automatic refill reminders?",
+        answer:
+          "Yes. After your first order we offer one-tap refill reminders for maintenance prescriptions. Manage your schedule anytime from your account dashboard.",
+      },
+      {
+        question: "What payment methods do you accept?",
+        answer:
+          "We accept all major credit and debit cards, mobile money, bank transfer, and cash on delivery for eligible areas. All online payments are processed over a secure, encrypted connection.",
+      },
+      {
+        question: "Is a pharmacist consultation free?",
+        answer:
+          "Absolutely. Our licensed pharmacists are available by chat, phone, or in-store. Medication queries, interaction checks, and dosage advice are always free of charge.",
+      },
+      {
+        question: "What is your return and refund policy?",
+        answer:
+          "Unopened, un-dispensed items can be returned within 7 days of purchase for a full refund. Prescription medicines cannot be returned once dispensed for regulatory reasons.",
+      },
     ],
   },
 

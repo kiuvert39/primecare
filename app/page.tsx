@@ -4,18 +4,21 @@ import AboutSection               from "@/components/AboutSection";
 import { WhyChooseUsSection }     from "@/components/WhyChooseUsSection";
 import { MedicineInquirySection } from "@/components/MedicineInquirySection";
 import { TestimonialsSection }    from "@/components/TestimonialsSection";
+import { FAQSection }             from "@/components/FAQSection";
 import { ContactSection }         from "@/components/ContactSection";
 
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen font-sans">
       <Hero />
-        <AboutSection />
+      <AboutSection />
       <CategorySection />
-    
       <WhyChooseUsSection />
-      <MedicineInquirySection />
+
       <TestimonialsSection />
+      <MedicineInquirySection />
+      <FAQSection />
+            
       <ContactSection />
     </main>
   );
