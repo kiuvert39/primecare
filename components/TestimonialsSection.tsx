@@ -1,78 +1,107 @@
+import Image from "next/image";
 import { home } from "@/data";
 
-function StarIcon({ filled }: { filled: boolean }) {
+function QuoteMark() {
   return (
-    <svg className={`w-4 h-4 ${filled ? "text-warning" : "text-neutral-200"}`}
-      viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+    <svg
+      className="absolute inset-0 w-full h-full text-neutral-100 pointer-events-none select-none"
+      aria-hidden
+      viewBox="0 0 80 60"
+      fill="currentColor"
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <path d="M10 40 Q10 20 25 20 Q15 20 15 32 L22 32 L22 48 L10 48 Z" />
+      <path d="M32 40 Q32 20 47 20 Q37 20 37 32 L44 32 L44 48 L32 48 Z" />
     </svg>
   );
 }
 
-function QuoteIcon() {
+function TestimonialCard({
+  item,
+}: {
+  item: (typeof home.testimonials.items)[number];
+}) {
   return (
-    <svg className="w-8 h-8 text-brand-200" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M14.017 21v-7.391c0-5.704 3.748-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h3.983v10h-9.966z" />
-    </svg>
+    <div
+      className="relative bg-white rounded-2xl border border-neutral-100
+                 p-6 w-72 shrink-0 mx-3 flex flex-col items-center text-center
+                 overflow-hidden"
+      style={{ boxShadow: "0 4px 24px -4px rgba(0,0,0,0.08)" }}
+    >
+      <QuoteMark />
+
+      {/* Avatar image */}
+      <div
+        className="relative z-10 w-16 h-16 rounded-full overflow-hidden shrink-0 mb-3 ring-4 ring-white"
+        style={{ boxShadow: "0 4px 16px -2px rgba(0,0,0,0.18)" }}
+      >
+        <Image
+          src={item.avatar}
+          alt={item.name}
+          fill
+          sizes="64px"
+          unoptimized
+          className="object-cover object-center"
+        />
+      </div>
+
+      {/* Name */}
+      <p className="relative z-10 text-sm font-bold text-secondary-dark leading-tight">
+        {item.name}
+      </p>
+
+      {/* Role */}
+      <p className="relative z-10 text-[11px] text-neutral-400 mt-0.5 mb-4">
+        {item.role}
+      </p>
+
+      {/* Quote */}
+      <p className="relative z-10 text-sm text-neutral-500 leading-relaxed line-clamp-3">
+        {item.body}
+      </p>
+    </div>
   );
 }
-
-const AVATAR_COLORS = [
-  "bg-primary text-white",
-  "bg-brand-400 text-white",
-  "bg-accent-400 text-white",
-  "bg-success text-white",
-];
 
 export function TestimonialsSection() {
   const { testimonials } = home;
+  const items = testimonials.items;
+  const count = items.length;
+
+  const row = [...items, ...items];
+
+  const waveDelay = (i: number) =>
+    `${((i % count) / count) * 3}s`;
+
   return (
-    <section className="bg-white py-16 md:py-24 px-6 md:px-12 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-white py-16 md:py-24 overflow-hidden">
 
-        {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-secondary-dark leading-tight">
-            {testimonials.heading}
-          </h2>
-        </div>
+      {/* Header */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 text-center mb-12 md:mb-16">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-secondary-dark leading-tight">
+          {testimonials.heading}
+        </h2>
+      </div>
 
-        {/* Testimonial cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-          {testimonials.items.map((item, i) => (
-            <div key={item.name}
-              className="bg-white rounded-2xl p-6 border border-neutral-100
-                         flex flex-col gap-4 hover:shadow-md transition-shadow duration-200">
-
-              <div className="flex items-start justify-between">
-                <QuoteIcon />
-                <div className="flex gap-0.5">
-                  {[...Array(5)].map((_, s) => (
-                    <StarIcon key={s} filled={s < item.rating} />
-                  ))}
-                </div>
-              </div>
-
-              <p className="text-sm text-neutral-600 leading-relaxed flex-1 italic">
-                &ldquo;{item.body}&rdquo;
-              </p>
-
-              <div className="flex items-center gap-3 pt-2 border-t border-neutral-100">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center
-                                 text-sm font-bold shrink-0 ${AVATAR_COLORS[i % AVATAR_COLORS.length]}`}>
-                  {item.initials}
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-secondary-dark leading-tight">{item.name}</p>
-                  <p className="text-[11px] text-neutral-400 mt-0.5">{item.role}</p>
-                </div>
-              </div>
-
+      {/* Single marquee row — each card floats on its own wave phase */}
+      <div className="py-8 group">
+        <div
+          className="flex group-hover:[animation-play-state:paused]"
+          style={{ width: "max-content", animation: "marquee 32s linear infinite" }}
+        >
+          {row.map((item, i) => (
+            <div
+              key={`r-${i}`}
+              style={{
+                animation: `waveFloat 3s ease-in-out ${waveDelay(i)} infinite`,
+              }}
+            >
+              <TestimonialCard item={item} />
             </div>
           ))}
         </div>
-
       </div>
+
     </section>
   );
 }

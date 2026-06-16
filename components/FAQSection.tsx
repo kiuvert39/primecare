@@ -113,7 +113,7 @@ export function FAQSection() {
   return (
     <section
       ref={sectionRef}
-      className="bg-white py-16 md:py-24 px-6 md:px-12 overflow-hidden"
+      className="bg-white py-16 md:py-18 px-6 md:px-12 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-start">
@@ -152,30 +152,6 @@ export function FAQSection() {
                 ))
               )}
             </svg>
-
-            {/* Contact nudge card */}
-            <a
-              href={faq.contact.href}
-              className="group flex items-center gap-4 bg-white border border-brand-200
-                         rounded-2xl px-5 py-4 hover:shadow-md hover:border-primary/40
-                         transition-all duration-200 max-w-xs"
-            >
-              <div className="w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                <svg className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor" strokeWidth={1.8}>
-                  <path strokeLinecap="round" strokeLinejoin="round"
-                    d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-3 3-3-3z" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-[11px] text-neutral-400 uppercase tracking-wider">
-                  {faq.contact.prompt}
-                </p>
-                <p className="text-sm font-bold text-primary group-hover:underline">
-                  {faq.contact.cta} →
-                </p>
-              </div>
-            </a>
           </div>
 
           {/* ── Right: accordion column ───────────────────────────────────── */}

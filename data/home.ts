@@ -172,6 +172,7 @@ export const home = {
         rating: 5,
         body: "PrimeCare has made managing my family's prescriptions so much easier. Same-day delivery is an absolute lifesaver!",
         initials: "SM",
+        avatar: "https://i.pravatar.cc/150?img=47",
       },
       {
         name: "Dr. James K.",
@@ -179,6 +180,7 @@ export const home = {
         rating: 5,
         body: "I recommend PrimeCare to my patients without hesitation. Their pharmacists are thorough and always verify prescriptions correctly.",
         initials: "JK",
+        avatar: "https://i.pravatar.cc/150?img=12",
       },
       {
         name: "Aisha T.",
@@ -186,6 +188,7 @@ export const home = {
         rating: 5,
         body: "The refill reminders mean I never run out of my maintenance medicines. Outstanding service, every single time.",
         initials: "AT",
+        avatar: "https://i.pravatar.cc/150?img=45",
       },
       {
         name: "Robert P.",
@@ -193,6 +196,7 @@ export const home = {
         rating: 5,
         body: "Friendly staff, fair prices, and they actually take time to explain my medications. This is what a pharmacy should be.",
         initials: "RP",
+        avatar: "https://i.pravatar.cc/150?img=56",
       },
     ],
   },

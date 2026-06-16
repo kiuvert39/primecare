@@ -42,11 +42,6 @@ export function ContactSection() {
 
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
-          <span className="inline-flex items-center bg-brand-100 text-primary
-                           text-[11px] font-bold uppercase tracking-[0.18em]
-                           px-3.5 py-1.5 rounded-full mb-4">
-            {contactSection.eyebrow}
-          </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-secondary-dark leading-tight mb-4">
             {contactSection.heading}
           </h2>

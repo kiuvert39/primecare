@@ -167,6 +167,7 @@ export default function AboutSection() {
                   src={about.image}
                   alt=""
                   fill
+                  sizes="128px"
                   className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-brand-700/20" />
@@ -181,6 +182,7 @@ export default function AboutSection() {
                   src={about.image}
                   alt=""
                   fill
+                  sizes="192px"
                   className="object-cover object-[30%_center]"
                 />
                 <div className="absolute inset-0 bg-accent-500/20" />
@@ -195,6 +197,7 @@ export default function AboutSection() {
                   src={about.image}
                   alt="Healthcare professionals"
                   fill
+                  sizes="(max-width: 768px) 288px, 320px"
                   className="object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-brand-900/10" />
