@@ -1,10 +1,10 @@
 export const home = {
   hero: {
     eyebrow: "Trusted Healthcare Solutions",
-    heading: "Fast.\nSimple.\nReliable Care.",
+    heading: "Fast. Simple.\nReliable",
     subheading:
       "We are dedicated to delivering high-quality, personalised care to every individual — making healthcare accessible, straightforward, and stress-free.",
-    cta: { label: "Shop Now", href: "/products" },
+    cta: { label: "Contact Us", href: "/contact" },
     secondary: { label: "Learn More", href: "/about" },
     backgroundImage: "/images/bg-hero.jpeg",
   },

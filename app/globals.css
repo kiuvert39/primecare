@@ -126,3 +126,11 @@ body {
   0%, 100% { transform: translateY(0px);   }
   50%       { transform: translateY(-24px); }
 }
+@keyframes wordFallIn {
+  from { transform: translateY(-110%); }
+  to   { transform: translateY(0); }
+}
+@keyframes wordFallOut {
+  from { transform: translateY(0); }
+  to   { transform: translateY(110%); }
+}
